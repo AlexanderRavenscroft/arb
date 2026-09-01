@@ -1,11 +1,15 @@
 id = "arb"
 name = "ARB"
+description = "Language support for Flutter ARB localization files"
 version = "0.0.1"
 schema_version = 1
-
 authors = ["Alexander Ravenscroft <alex.ravenscroft.dev@gmail.com>"]
-description = "Language support for Flutter ARB localization files"
 repository = "https://github.com/AlexanderRavenscroft/arb"
+
+[language_servers.arb-language-server]
+name = "ARB LSP"
+language = "ARB"
+language_ids = { "ARB" = "json" }
 
 [grammars.json]
 repository = "https://github.com/tree-sitter/tree-sitter-json"
