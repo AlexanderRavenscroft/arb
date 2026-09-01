@@ -9,6 +9,8 @@ const PACKAGE_NAME: &str = "vscode-langservers-extracted";
 const SERVER_PATH: &str =
     "node_modules/vscode-langservers-extracted/bin/vscode-json-language-server";
 
+const ARB_SCHEMA: &str = include_str!("../schemas/arb.json");
+
 struct ArbExtension {
     did_find_server: bool,
 }
@@ -108,6 +110,9 @@ impl zed::Extension for ArbExtension {
         _language_server_id: &zed::LanguageServerId,
         worktree: &zed::Worktree,
     ) -> Result<Option<serde_json::Value>> {
+        let arb_schema: serde_json::Value = serde_json::from_str(ARB_SCHEMA)
+            .map_err(|error| format!("failed to parse bundled ARB schema: {error}"))?;
+
         let workspace_configuration = LspSettings::for_worktree(LANGUAGE_SERVER_ID, worktree)
             .ok()
             .and_then(|settings| settings.settings)
@@ -119,7 +124,14 @@ impl zed::Extension for ArbExtension {
                         },
                         "validate": {
                             "enable": true
-                        }
+                        },
+                        "schemas": [
+                            {
+                                "fileMatch": ["*.arb"],
+                                "url": "arb://schemas/arb.json",
+                                "schema": arb_schema
+                            }
+                        ]
                     }
                 })
             });
