@@ -1,0 +1,12 @@
+id = "arb"
+name = "ARB"
+version = "0.0.1"
+schema_version = 1
+
+authors = ["Alexander Ravenscroft <alex.ravenscroft.dev@gmail.com>"]
+description = "Language support for Flutter ARB localization files"
+repository = "https://github.com/AlexanderRavenscroft/arb"
+
+[grammars.json]
+repository = "https://github.com/tree-sitter/tree-sitter-json"
+rev = "ee35a6ebefcef0c5c416c0d1ccec7370cfca5a24"
