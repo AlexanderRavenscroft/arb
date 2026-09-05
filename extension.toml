@@ -1,7 +1,7 @@
 id = "arb"
 name = "ARB"
 description = "Language support for Flutter ARB localization files"
-version = "0.0.1"
+version = "1.0.0"
 schema_version = 1
 authors = ["Alexander Ravenscroft <alex.ravenscroft.dev@gmail.com>"]
 repository = "https://github.com/AlexanderRavenscroft/arb"

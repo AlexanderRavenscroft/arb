@@ -3,7 +3,7 @@ use std::{env, path::PathBuf};
 use zed_extension_api::{self as zed, Result};
 
 const PACKAGE_NAME: &str = "arb-language-server";
-const PACKAGE_VERSION: &str = "0.0.1";
+const PACKAGE_VERSION: &str = "1.0.0";
 const SERVER_ENTRY_POINT: &str = "out/server.js";
 
 struct ArbExtension;
