@@ -1,0 +1,70 @@
+{
+  "stringmessage": {
+    "prefix": "string",
+    "body": [
+      "\"${1:id}\": \"${2:message}\",",
+      "\"@$1\": {",
+      "\t\"description\": \"${3:description}\"",
+      "}$0"
+    ],
+    "description": "A simple ARB string message"
+  },
+  "stringWithArgMessage": {
+    "prefix": "stringWithArgs",
+    "body": [
+      "\"${1:id}\": \"Hello, {${2:name}}!\",",
+      "\"@$1\": {",
+      "\t\"description\": \"${3:description}\",",
+      "\t\"placeholders\": {",
+      "\t\t\"$2\": {",
+      "\t\t\t\"type\": \"${4:String}\",",
+      "\t\t\t\"example\": \"${5:Alex}\"",
+      "\t\t}",
+      "\t}",
+      "}$0"
+    ],
+    "description": "An ARB string message with arguments"
+  },
+  "pluralmessage": {
+    "prefix": "plural",
+    "body": [
+      "\"${1:id}\": \"{${2:count}, plural, =0{${3:No items}} one{${4:One item}} other{${5:Many items}}}\",",
+      "\"@$1\": {",
+      "\t\"description\": \"${6:description}\",",
+      "\t\"placeholders\": {",
+      "\t\t\"$2\": {",
+      "\t\t\t\"type\": \"int\",",
+      "\t\t\t\"example\": \"1\"",
+      "\t\t}",
+      "\t}",
+      "}$0"
+    ],
+    "description": "An ARB plural message"
+  },
+  "selectmessage": {
+    "prefix": "select",
+    "body": [
+      "\"${1:id}\": \"{${2:choice}, select, ${3:option}{${4:message}} other{${5:fallback}}}\",",
+      "\"@$1\": {",
+      "\t\"description\": \"${6:description}\",",
+      "\t\"placeholders\": {",
+      "\t\t\"$2\": {",
+      "\t\t\t\"type\": \"String\",",
+      "\t\t\t\"example\": \"$3\"",
+      "\t\t}",
+      "\t}",
+      "}$0"
+    ],
+    "description": "An ARB select message"
+  },
+  "arb": {
+    "prefix": "arb",
+    "body": [
+      "{",
+      "\t\"@@locale\": \"${1:en_US}\",",
+      "\t\"@@context\": \"${2:pagename}\"",
+      "}$0"
+    ],
+    "description": "An ARB file starter"
+  }
+}

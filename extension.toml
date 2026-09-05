@@ -5,6 +5,7 @@ version = "0.0.1"
 schema_version = 1
 authors = ["Alexander Ravenscroft <alex.ravenscroft.dev@gmail.com>"]
 repository = "https://github.com/AlexanderRavenscroft/arb"
+snippets = ["./snippets/arb.json"]
 
 [language_servers.arb-language-server]
 name = "ARB LSP"
